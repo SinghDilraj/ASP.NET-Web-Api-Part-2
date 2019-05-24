@@ -41,6 +41,7 @@ namespace Web_Api_Payments.Controllers
                             Amount = payment.Amount,
                             CreditCardNumber = payment.CreditCardNumber,
                             NameOnCard = payment.NameOnCard,
+                            Approved = payment.Approved,
                             CreditCard = new CreditCardViewModel
                             {
                                 Id = payment.CreditCard.Id,
@@ -58,7 +59,7 @@ namespace Web_Api_Payments.Controllers
                 }
                 else
                 {
-                    return BadRequest("Credit card Id not valid.");
+                    return BadRequest("Credit card Id Number is not valid.");
                 }
             }
             else
