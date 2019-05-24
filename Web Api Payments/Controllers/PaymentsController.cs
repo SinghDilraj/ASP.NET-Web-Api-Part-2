@@ -14,7 +14,7 @@ namespace Web_Api_Payments.Controllers
         {
             if (ModelState.IsValid)
             {
-                CreditCard card = DbContext.CreditCards.FirstOrDefault(p => p.Id == model.CreditCardId);
+                CreditCard card = DbContext.CreditCards.FirstOrDefault(p => p.IdentificationNumber == model.CreditCardIdNumber);
 
                 if (card != null)
                 {
