@@ -8,7 +8,7 @@ namespace Web_Api_Payments.Models.BindingModels
         [Required]
         public string CreditCardIdNumber { get; set; }
         [Required]
-        [Range(typeof(decimal), "0", "79228162514264337593543950335", ErrorMessage = "Amount Should be greator than 0.")]
+        [Range(typeof(decimal), "1", "79228162514264337593543950335", ErrorMessage = "Amount Should be greator than 0.")]
         public decimal Amount { get; set; }
         [Required]
         public string NameOnCard { get; set; }
