@@ -43,20 +43,5 @@ namespace Web_Api_Payments.Controllers
                 return NotFound();
             }
         }
-
-        //// POST: api/Cards
-        //public void Post([FromBody]string value)
-        //{
-        //}
-
-        //// PUT: api/Cards/5
-        //public void Put(int id, [FromBody]string value)
-        //{
-        //}
-
-        //// DELETE: api/Cards/5
-        //public void Delete(int id)
-        //{
-        //}
     }
 }

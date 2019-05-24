@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Web.Http;
 using Web_Api_Payments.Models.BindingModels;
 using Web_Api_Payments.Models.Domain;
@@ -9,19 +10,6 @@ namespace Web_Api_Payments.Controllers
     [RoutePrefix("Api/Payments")]
     public class PaymentsController : BaseController
     {
-        //// GET: api/Payments
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
-
-        //// GET: api/Payments/5
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
-
-        // POST: api/Payments
         public IHttpActionResult PostNewPayment(PaymentPostModel model)
         {
             if (ModelState.IsValid)
@@ -38,7 +26,7 @@ namespace Web_Api_Payments.Controllers
                         SecurityCode = model.SecurityCode,
                         CreditCardNumber = model.CreditCardNumber,
                         NameOnCard = model.NameOnCard,
-                        Approved = true
+                        Approved = FiftyPercentBool()
                     };
 
                     DbContext.Payments.Add(payment);
@@ -79,14 +67,14 @@ namespace Web_Api_Payments.Controllers
             }
         }
 
-        //// PUT: api/Payments/5
-        //public void Put(int id, [FromBody]string value)
-        //{
-        //}
+        private bool FiftyPercentBool()
+        {
+            bool TheBool;
+            Random rand = new Random();
 
-        //// DELETE: api/Payments/5
-        //public void Delete(int id)
-        //{
-        //}
+            TheBool = rand.Next(0, 2) != 0;
+
+            return TheBool;
+        }
     }
 }
