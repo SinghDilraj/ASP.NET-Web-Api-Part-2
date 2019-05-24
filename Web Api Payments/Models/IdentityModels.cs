@@ -22,6 +22,7 @@ namespace Web_Api_Payments.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<CreditCard> CreditCards { get; set; }
+        public DbSet<Payment> Payments { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
